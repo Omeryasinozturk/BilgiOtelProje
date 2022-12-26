@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BilgiOtelHelperSQL.cs" />
     <Compile Include="DataConnections.cs" />
+    <Compile Include="ErkenRezervasyonDAL.cs" />
     <Compile Include="KampanyalarDAL.cs" />
     <Compile Include="MisafirlerDAL.cs" />
     <Compile Include="MusterilerDAL.cs" />

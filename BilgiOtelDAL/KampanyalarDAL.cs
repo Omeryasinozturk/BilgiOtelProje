@@ -1,6 +1,7 @@
 ﻿using BilgiOtel_Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace BilgiOtelDAL
 {
     public class KampanyalarDAL
     {
-
-        //ID ye göre Kitap Getir (SELECT with ID)
-        public Kampanyalar getKitaplarwithID(int kampanyaID)
+        #region
+        //ID ye göre Kampanya Getir (SELECT with ID)
+        public Kampanyalar getKampanyalarwithID(int kampanyaID)
         {
             SqlParameter[] kampanyaParametreleri =
             {
@@ -45,24 +46,10 @@ namespace BilgiOtelDAL
         }
 
         //Tüm Kampanyaları Getir (SELECT ALL)
-        public Kampanyalar getKitaplarAll()
+        public DataTable getAllKampanyalar()
         {
-            SqlDataReader Kampanyalardr = BilgiOtelHelperSQL.myExecuteReader("?????????????", null, "sp");
-
-            Kampanyalar myKampanya = null;
-            while (Kampanyalardr.Read())
-            {
-                myKampanya.KampanyaId = Convert.ToInt32(Kampanyalardr["KampanyaId"]);
-                myKampanya.KampanyaBilgileri = Kampanyalardr["KampanyaBilgileri"].ToString();
-                myKampanya.KampanyaIndirimOran =Convert.ToInt32( Kampanyalardr["KampanyaIndirimOran"]);
-                myKampanya.KampanyaBaslangicZaman = Convert.ToDateTime(Kampanyalardr["KampanyaBaslangicZaman"]);
-                myKampanya.KampanyaBitisTarihi = Convert.ToDateTime(Kampanyalardr["KampanyaBitisTarihi"]);
-                myKampanya.KampanyaTanim = Kampanyalardr["KampanyaTanim"].ToString();
-
-
-            }
-
-            return myKampanya;
+            DataTable kampanyalartablosu = BilgiOtelHelperSQL.myexecuteReaderTable("select KampanyaId,KampanyaBilgileri,KampanyaIndirimOran,KampanyaBaslangicZaman,KampanyaBitisTarihi,KampanyaTanim from tbl_kampanyalar", null, "txt");
+            return kampanyalartablosu;
 
         }
 
@@ -92,8 +79,9 @@ namespace BilgiOtelDAL
             Kampanyalardr.Close();
             return myKampanya;
         }
+        #endregion
 
-        //Yeni Kitap Verisi gir (INSERT)
+        //Kampanya Kaydet
         public int insertKampanyalar(Kampanyalar eklenecekkampanya)
         {
             SqlParameter[] kampanyaParametreleri =
@@ -134,7 +122,7 @@ namespace BilgiOtelDAL
 
 
 
-            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("????????", kampanyaParametreleri, "sp");
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_KampyanyaEkleme", kampanyaParametreleri, "sp");
 
             return etkilenenSatir;
 
@@ -178,7 +166,7 @@ namespace BilgiOtelDAL
 
             };
 
-            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("??????????", kitaplarParametreleri, "sp");
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_KampanyaGuncelleme", kitaplarParametreleri, "sp");
 
             return etkilenenSatir;
         }
@@ -191,13 +179,10 @@ namespace BilgiOtelDAL
                 new SqlParameter {
                    ParameterName = "KampanyaId",
                    Value=silinecekkampanya.KampanyaId
-
                 }
-
-
             };
 
-            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("???????????", KampanyaParametreleri, "sp");
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_KampanyaSilme", KampanyaParametreleri, "sp");
 
             return etkilenenSatir;
 
