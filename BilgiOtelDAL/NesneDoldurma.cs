@@ -42,11 +42,11 @@ namespace BilgiOtelDAL
         }
         public void herhangibircombo(ComboBox cmb, string spname,string sqlType)
         {
-            List<KeyValuePair<object, string>> a = new List<KeyValuePair<object, string>>();
+            List<KeyValuePair<int, string>> a = new List<KeyValuePair<int, string>>();
             SqlDataReader deneme = BilgiOtelHelperSQL.myExecuteReader(spname, null, sqlType);
             while (deneme.Read())
             {
-                a.Add(new KeyValuePair<object, string>((object)deneme[0], (string)deneme[1]));
+                a.Add(new KeyValuePair<int, string>((int)deneme[0], (string)deneme[1]));
             }
             cmb.DataSource = a.ToList();
             cmb.ValueMember="Key";  

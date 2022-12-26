@@ -53,6 +53,12 @@
       <DependentUpon>AnasayfaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalGirisClass.cs" />
+    <Compile Include="KampanyalarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KampanyalarForm.Designer.cs">
+      <DependentUpon>KampanyalarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     <Compile Include="MusteriEkleForm.Designer.cs">
       <DependentUpon>MusteriEkleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OdaDuzenleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdaDuzenleme.Designer.cs">
+      <DependentUpon>OdaDuzenleme.cs</DependentUpon>
+    </Compile>
     <Compile Include="OdaSatisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,9 @@
     <EmbeddedResource Include="AnasayfaForm.resx">
       <DependentUpon>AnasayfaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KampanyalarForm.resx">
+      <DependentUpon>KampanyalarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MusteriEkleForm.resx">
       <DependentUpon>MusteriEkleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdaDuzenleme.resx">
+      <DependentUpon>OdaDuzenleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OdaSatisForm.resx">
       <DependentUpon>OdaSatisForm.cs</DependentUpon>

@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BilgiOtelDAL
 {
@@ -46,6 +49,149 @@ namespace BilgiOtelDAL
                 myoda.OdaKisiSayisi = Convert.ToInt32(Odard["OdaKisiSayisi"].ToString().FirstOrDefault());
             }
             return myoda;
+        }
+
+        public int Odaguncelleme(Odalar oda)
+        {
+            SqlParameter[] odaguncelleme =
+            {
+                new SqlParameter
+                {
+                    ParameterName="OdaNo",
+                    Value=oda.OdaId
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaFiyat",
+                    Value=oda.OdaFiyat
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaMiniBarOk",
+                    Value=oda.OdaMiniBarOk
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaKlimaOk",
+                    Value=oda.OdaKlimaOk
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaKurutmaOk",
+                    Value=oda.OdaKurutmaOk
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaWifiOk",
+                    Value=oda.OdaWifiOk},
+                new SqlParameter
+                {
+                    ParameterName="OdaKasaOk",
+                    Value=oda.OdaKasaOk
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaBalkonOk",
+                    Value=oda.OdaBalkonOk
+                },
+                new SqlParameter {
+                    ParameterName="OdaTvOk",
+                    Value=oda.OdaTvOk
+                },
+                new SqlParameter {
+                    ParameterName="OdaAciklama",
+                    Value=oda.OdaAciklama
+                },
+                new SqlParameter {
+                    ParameterName="OdaKat",
+                    Value=oda.OdaKat
+                },
+                new SqlParameter {
+                    ParameterName="OdaKisiSayisi",
+                    Value=oda.OdaKisiSayisi
+                }
+            };
+
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_odaguncelleme", odaguncelleme ,"sp");
+
+            return etkilenenSatir;
+        }
+
+        public int OdaDurumEkleme(OdaDurum durum)
+        {
+            SqlParameter[] tadilatparam =
+            { 
+                new SqlParameter
+                {
+                    ParameterName="OdaId",
+                    Value=durum.OdaId
+                },
+                new SqlParameter
+                {
+                    ParameterName="DurumKategoriId",
+                    Value=durum.DurumKategoriId
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumilktarih",
+                    Value=durum.OdaDurumilktarih
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumSonTarih",
+                    Value=durum.OdaDurumSonTarih
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumAktifMi",
+                    Value=durum.OdaDurumAktifMi
+                },
+            };
+
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_TadilatKayıt", tadilatparam, "sp");
+
+            return etkilenenSatir;
+        }
+
+        public int OdaDurumGuncelleme(OdaDurum durumguncelleme)
+        {
+            SqlParameter[] tadilatguncellemeparam =
+            {
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumID",
+                    Value=durumguncelleme.OdaDurumID
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaId",
+                    Value=durumguncelleme.OdaId
+                },
+                new SqlParameter
+                {
+                    ParameterName="DurumKategoriId",
+                    Value=durumguncelleme.DurumKategoriId
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumilktarih",
+                    Value=durumguncelleme.OdaDurumilktarih
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumSonTarih",
+                    Value=durumguncelleme.OdaDurumSonTarih
+                },
+                new SqlParameter
+                {
+                    ParameterName="OdaDurumAktifMi",
+                    Value=durumguncelleme.OdaDurumAktifMi
+                },
+            };
+
+            int etkilenenSatir = BilgiOtelHelperSQL.myExecuteNonQuery("sp_TadilatGuncelleme", tadilatguncellemeparam, "sp");
+
+            return etkilenenSatir;
         }
 
         #region kontrol et

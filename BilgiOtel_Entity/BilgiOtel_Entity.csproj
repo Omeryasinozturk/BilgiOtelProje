@@ -55,6 +55,7 @@
     <Compile Include="KullaniciTipi.cs" />
     <Compile Include="Misafir.cs" />
     <Compile Include="Musteri.cs" />
+    <Compile Include="OdaDurum.cs" />
     <Compile Include="Odalar.cs" />
     <Compile Include="OdaTipi.cs" />
     <Compile Include="Personeller.cs" />

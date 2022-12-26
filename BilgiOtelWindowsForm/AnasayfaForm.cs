@@ -73,14 +73,14 @@ namespace BilgiOtelWindowsForm
         {
             Button b = (Button)sender;
             panelhareket(b);
-            //  paneleformgetirme(new OdaDurumForm());
+            paneleformgetirme(new OdaDuzenleme());
         }
 
         private void btnKampanyalar_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             panelhareket(b);
-            //  paneleformgetirme(new KampanyalarForm());
+            paneleformgetirme(new KampanyalarForm());
         }
 
         private void btnPersonelListesi_Click(object sender, EventArgs e)
