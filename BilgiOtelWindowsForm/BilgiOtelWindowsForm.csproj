@@ -89,6 +89,12 @@
     <Compile Include="OdaSatisForm.Designer.cs">
       <DependentUpon>OdaSatisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonelEklemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEklemeForm.Designer.cs">
+      <DependentUpon>PersonelEklemeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnasayfaForm.resx">
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OdaSatisForm.resx">
       <DependentUpon>OdaSatisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEklemeForm.resx">
+      <DependentUpon>PersonelEklemeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

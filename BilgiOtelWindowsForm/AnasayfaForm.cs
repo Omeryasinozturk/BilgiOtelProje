@@ -33,9 +33,6 @@ namespace BilgiOtelWindowsForm
 
         }
 
-
-
-
         private void AnasayfaForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -87,7 +84,7 @@ namespace BilgiOtelWindowsForm
         {
             Button b = (Button)sender;
             panelhareket(b);
-            //  paneleformgetirme(new PersonelForm());
+            paneleformgetirme(new PersonelEklemeForm());
         }
 
         private void btnMuhasebe_Click(object sender, EventArgs e)
