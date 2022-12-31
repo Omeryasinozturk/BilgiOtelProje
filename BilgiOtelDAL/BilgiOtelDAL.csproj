@@ -46,6 +46,7 @@
     <Compile Include="DataConnections.cs" />
     <Compile Include="ErkenRezervasyonDAL.cs" />
     <Compile Include="KampanyalarDAL.cs" />
+    <Compile Include="KullaniciDal.cs" />
     <Compile Include="MisafirlerDAL.cs" />
     <Compile Include="MusterilerDAL.cs" />
     <Compile Include="NesneDoldurma.cs" />

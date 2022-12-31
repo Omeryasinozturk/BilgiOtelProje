@@ -430,7 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1835, 900);
+            this.ClientSize = new System.Drawing.Size(1647, 920);
             this.Controls.Add(this.txtkampanyaid);
             this.Controls.Add(this.btnErkenRezSil);
             this.Controls.Add(this.listView2);
@@ -461,7 +461,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnkaydet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KampanyalarForm";
             this.Text = "KampanyalarForm";
             this.Load += new System.EventHandler(this.KampanyalarForm_Load);

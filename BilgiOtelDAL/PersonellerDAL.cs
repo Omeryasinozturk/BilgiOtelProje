@@ -19,11 +19,6 @@ namespace BilgiOtelDAL
             {
                 new SqlParameter
                 {
-                    ParameterName= "PersonelId",
-                    Value=eklenecekpersonel.PersonelId
-                },
-                new SqlParameter
-                {
                     ParameterName= "PersonelAd",
                     Value=eklenecekpersonel.PersonelAd
                 },
@@ -44,12 +39,6 @@ namespace BilgiOtelDAL
                 },
                 new SqlParameter
                 {
-                    ParameterName= "PersonelUyrukId",
-
-                    Value=eklenecekpersonel.PersonelUyrukId
-                },
-                new SqlParameter
-                {
                     ParameterName= "PersonelEposta",
                     Value=eklenecekpersonel.PersonelEposta
                 },
@@ -60,11 +49,6 @@ namespace BilgiOtelDAL
                 },
                 new SqlParameter
                 {
-                    ParameterName= "PersonelPasaportNo",
-                    Value=eklenecekpersonel.PersonelPasaportNo
-                },
-                new SqlParameter
-                {
                     ParameterName = "CinsiyetId",
                     Value = eklenecekpersonel.CinsiyetId
                 },
@@ -72,11 +56,6 @@ namespace BilgiOtelDAL
                 {
                     ParameterName = "PersonelIseGirisTarihi",
                     Value = eklenecekpersonel.PersonelIseGirisTarihi
-                },
-                new SqlParameter
-                {
-                    ParameterName = "PersonelIstenCikisTarihi",
-                    Value = eklenecekpersonel.PersonelIstenCikisTarihi
                 },
                 new SqlParameter
                 {
@@ -95,23 +74,8 @@ namespace BilgiOtelDAL
                 },
                 new SqlParameter
                 {
-                    ParameterName = "GorevId",
-                    Value = eklenecekpersonel.GorevId
-                },
-                new SqlParameter
-                {
                     ParameterName = "PersonelKategoriID",
                     Value = eklenecekpersonel.PersonelKategoriID
-                },
-                new SqlParameter
-                {
-                    ParameterName = "PersonelEngelDurumu",
-                    Value = eklenecekpersonel.PersonelEngelDurumu
-                },
-                new SqlParameter
-                {
-                    ParameterName = "PersonelHesKodu",
-                    Value = eklenecekpersonel.PersonelHesKodu
                 },
                 new SqlParameter
                 {
@@ -142,11 +106,6 @@ namespace BilgiOtelDAL
                 {
                     ParameterName="PersonelAcilDurumKisiTelefon",
                     Value=eklenecekpersonel.PersonelAcilDurumKisiTelefon
-                },
-                new SqlParameter
-                {
-                    ParameterName="ResimId",
-                    Value=eklenecekpersonel.ResimId
                 },
             };
 
