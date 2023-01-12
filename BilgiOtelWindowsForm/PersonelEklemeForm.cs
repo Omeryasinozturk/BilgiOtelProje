@@ -23,7 +23,7 @@ namespace BilgiOtelWindowsForm
         Kullanici kaydedilecekkullanici = new Kullanici();
         Yetkiler kaydedilecekyetki = new Yetkiler();
         PersonellerDAL personeldal = new PersonellerDAL();  
-        KullaniciDal kullanicilardal = new KullaniciDal(); 
+        // kullanicilardal = new KullaniciDal(); 
         void comboilyukleme()
         { nesne.herhangibircombo(Cmbil, "select * from tbl_Il where UlkeId=" + cmbUlke.SelectedValue + "", "txt"); }
         void comboilceyukleme()
@@ -98,7 +98,7 @@ namespace BilgiOtelWindowsForm
         private void YetkiKaydet_Click(object sender, EventArgs e)
         {
             yetkibilgilerikayıt();
-            kullanicilardal.KullanıcıKaydet(kaydedilecekkullanici,personel,kaydedilecekyetki)
+         //  kullanicilardal.KullanıcıKaydet(kaydedilecekkullanici, personel, kaydedilecekyetki);
         }
     }
 }

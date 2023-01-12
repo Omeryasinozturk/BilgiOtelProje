@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiOtelDAL", "BilgiOtelDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiOtelWindowsForm", "BilgiOtelWindowsForm\BilgiOtelWindowsForm.csproj", "{264FA16A-0F45-4CEF-8210-D784A679E795}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiOtelWebForm", "BilgiOtelWebForm\BilgiOtelWebForm.csproj", "{EAF7248C-BEAE-458D-8E22-CE2954D3B234}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{264FA16A-0F45-4CEF-8210-D784A679E795}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{264FA16A-0F45-4CEF-8210-D784A679E795}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{264FA16A-0F45-4CEF-8210-D784A679E795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF7248C-BEAE-458D-8E22-CE2954D3B234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF7248C-BEAE-458D-8E22-CE2954D3B234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF7248C-BEAE-458D-8E22-CE2954D3B234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF7248C-BEAE-458D-8E22-CE2954D3B234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
