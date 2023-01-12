@@ -21,7 +21,7 @@
         </div>
     </div>
     <!-- Breadcrumb Section End -->
-    <%--<form action="/" method="post" runat="server">
+    <form action="/" method="post" runat="server">
     <div>
         
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
@@ -43,13 +43,12 @@
         <asp:Button ID="Button1" runat="server" Text="Button" />
 
     </div>
-        </form>--%>
+        
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
             <div class="row">
-
-
+                
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
                         <div class="col-lg-4 col-md-6">
@@ -74,7 +73,15 @@
                                             </tr>
                                             <tr>
                                                 <td class="r-o">Services:</td>
-                                                <td>Wifi <%#Eval("OdaWifiOk")%> <br /> Television <%#Eval("OdaTvOk")%>  <br />  MiniBar <%#Eval("OdaMiniBarOk")%> <br />  Klima <%#Eval("OdaKlimaOk")%>  <br />  Kurutma <%#Eval("OdaKurutmaOk")%> </td>
+                                                
+                                                <td>
+                                                   Wifi <asp:CheckBox ID="CheckBox1" runat="server" Checked=' <%#Eval("OdaWifiOk")%>' /> 
+                                                    <br /> Television <asp:CheckBox ID="CheckBox2" runat="server" Checked='<%#Eval("OdaTvOk")%>' ></asp:CheckBox>
+                                                    <br />  MiniBar   <asp:CheckBox ID="CheckBox3" runat="server" Checked='<%#Eval("OdaMiniBarOk")%> ' ></asp:CheckBox>
+                                                    <br />  Klima     <asp:CheckBox ID="CheckBox4" runat="server" Checked='<%#Eval("OdaKlimaOk")%>'></asp:CheckBox> 
+                                                    <br />  Kurutma   <asp:CheckBox ID="CheckBox5" runat="server" Checked='<%#Eval("OdaKurutmaOk")%>'></asp:CheckBox>
+                                                    <br />  Kasa      <asp:CheckBox ID="CheckBox6" runat="server" Checked='<%#Eval("[OdaKasaOk]")%>'></asp:CheckBox>
+                                                    <br />  Balkon    <asp:CheckBox ID="CheckBox7" runat="server" Checked='<%#Eval("[OdaBalkonOk]")%>'></asp:CheckBox>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -84,6 +91,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
+                 </form>  
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_Bilgi_HotelConnectionString %>" SelectCommand="SELECT * FROM [tbl_Odalar]"></asp:SqlDataSource>
             </div>
             <%--  <div class="col-lg-4 col-md-6">
