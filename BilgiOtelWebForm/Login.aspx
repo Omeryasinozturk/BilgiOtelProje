@@ -27,7 +27,9 @@
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
 		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
-		            	<input type="text" class="form-control" id="username" placeholder="Username">
+						<asp:TextBox ID="TxtKullaniciAdi" runat="server" class="form-control"></asp:TextBox>
+		            	
+						<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Boş Geçilemez" ControlToValidate="TxtKullaniciAdi"></asp:RequiredFieldValidator>
 		            </div>		            	            
 		          </div>              
 		        </div>
@@ -35,7 +37,8 @@
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
 		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
-		            	<input type="password" class="form-control" id="password" placeholder="Password">
+		            	<%--<input type="password" class="form-control" id="password" placeholder="Password">--%>
+						  <asp:TextBox ID="TxtParola" runat="server" class="form-control" ></asp:TextBox>
 		            </div>
 		          </div>
 		        </div>
@@ -53,6 +56,7 @@
 		          	<div class="control-wrapper">
 						  <asp:Button ID="BtnGrisi" runat="server" class="btn btn-info" Text="Login" OnClick="BtnGrisi_Click" />
 		          		<%--<input type="submit" value="Log in" >--%>
+						  <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 		          		<a href="ParolaUnuttum.aspx" class="text-right pull-right">Forgot password?</a>
 		          	</div>
 		          </div>

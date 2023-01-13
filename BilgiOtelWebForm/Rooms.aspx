@@ -92,7 +92,12 @@
                     </ItemTemplate>
                 </asp:Repeater>
                  </form>  
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_Bilgi_HotelConnectionString %>" SelectCommand="SELECT * FROM [tbl_Odalar]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_Bilgi_HotelConnectionString %>" SelectCommand="sp_WebSorgu2" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:QueryStringParameter QueryStringField="Tarih1" Name="ilktarih" Type="DateTime"></asp:QueryStringParameter>
+            <asp:QueryStringParameter QueryStringField="Tarih2" Name="ikincitarih" Type="DateTime"></asp:QueryStringParameter>
+        </SelectParameters>
+    </asp:SqlDataSource>
             </div>
             <%--  <div class="col-lg-4 col-md-6">
                     <div class="room-item">

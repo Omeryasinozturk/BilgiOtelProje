@@ -20,14 +20,16 @@
                 <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                     <div class="booking-form">
                         <h3>Booking Your Hotel</h3>
-                        <form action="#">
+                        <form action="#" runat="server">
                             <div class="check-date">
-                                <label for="date-in">Check In:</label>
+                               <label for="date-in">Check In:</label>
+                                <asp:Calendar ID="Tarih1" runat="server"></asp:Calendar>
                                 <input type="text" class="date-input" id="date-in">
-                                <i class="icon_calendar"></i>
+                                 <i class="icon_calendar"> </i>
                             </div>
                             <div class="check-date">
                                 <label for="date-out">Check Out:</label>
+                                <asp:Calendar ID="Tarih2" runat="server"></asp:Calendar>
                                 <input type="text" class="date-input" id="date-out">
                                 <i class="icon_calendar"></i>
                             </div>
@@ -45,7 +47,8 @@
                                     <option value="">2 Room</option>
                                 </select>
                             </div>
-                            <button type="submit">Check Availability</button>
+                            <asp:Button ID="Button1" runat="server" Text="Oda Sorgu" OnClick="Button1_Click" />
+                            <%--<button id="BtnSorgu" type="submit">Check Availability</button>--%>
                         </form>
                     </div>
                 </div>
