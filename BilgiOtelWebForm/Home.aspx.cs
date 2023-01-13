@@ -16,7 +16,7 @@ namespace BilgiOtelWebForm
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Rooms.aspx?Tarih1="+Tarih1.SelectedDate.ToShortDateString()+"Tarih2="+Tarih2.SelectedDate.ToShortDateString());
+            Response.Redirect("Rooms.aspx?Tarih1="+Tarih1.SelectedDate.ToShortDateString()+"&Tarih2="+Tarih2.SelectedDate.ToShortDateString());
            
         }
     }

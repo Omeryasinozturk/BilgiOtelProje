@@ -11,15 +11,9 @@ namespace BilgiOtelWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-
-            }
+           
         }
-            
-        //protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        //{
 
-        //}
+      
     }
 }

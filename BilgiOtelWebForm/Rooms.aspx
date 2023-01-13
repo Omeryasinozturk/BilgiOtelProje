@@ -82,6 +82,7 @@
                                                     <br />  Kurutma   <asp:CheckBox ID="CheckBox5" runat="server" Checked='<%#Eval("OdaKurutmaOk")%>'></asp:CheckBox>
                                                     <br />  Kasa      <asp:CheckBox ID="CheckBox6" runat="server" Checked='<%#Eval("[OdaKasaOk]")%>'></asp:CheckBox>
                                                     <br />  Balkon    <asp:CheckBox ID="CheckBox7" runat="server" Checked='<%#Eval("[OdaBalkonOk]")%>'></asp:CheckBox>
+                                                    </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -94,8 +95,8 @@
                  </form>  
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_Bilgi_HotelConnectionString %>" SelectCommand="sp_WebSorgu2" SelectCommandType="StoredProcedure">
         <SelectParameters>
-            <asp:QueryStringParameter QueryStringField="Tarih1" Name="ilktarih" Type="DateTime"></asp:QueryStringParameter>
-            <asp:QueryStringParameter QueryStringField="Tarih2" Name="ikincitarih" Type="DateTime"></asp:QueryStringParameter>
+            <asp:QueryStringParameter Name="ilktarih" QueryStringField="Tarih1" Type="DateTime" />
+            <asp:QueryStringParameter Name="ikincitarih" QueryStringField="Tarih2" Type="DateTime" />
         </SelectParameters>
     </asp:SqlDataSource>
             </div>
